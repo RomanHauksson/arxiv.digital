@@ -1,8 +1,8 @@
 import { Noto_Sans, Noto_Sans_Mono } from "next/font/google";
 
 import "./globals.css";
-import { ThemeProvider } from "@/packages/template/components/theme-provider";
-import { cn } from "@/packages/template/lib/utils";
+import { ThemeProvider } from "@/components/theme-provider";
+import { cn } from "@/lib/utils";
 
 const notoSans = Noto_Sans({ variable: "--font-sans" });
 
