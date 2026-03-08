@@ -1,6 +1,6 @@
 import { Noto_Sans, Noto_Sans_Mono } from "next/font/google";
 
-import "@template/app/globals.css";
+import "./globals.css";
 import { ThemeProvider } from "@template/components/theme-provider";
 import { cn } from "@template/lib/utils";
 
