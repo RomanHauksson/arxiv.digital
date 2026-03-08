@@ -15,7 +15,8 @@ node_modules
 */coverage
 
 # next.js
-*/.next/
+packages/website/.next
+packages/template/.next
 */out/
 
 # production
