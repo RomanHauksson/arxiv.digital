@@ -1,0 +1,16 @@
+# On Integer Programming for the Binarized Neural Network Verification Problem
+
+<SmallCaps>Woojin Kim, James Luedtke</SmallCaps>
+
+## Abstract
+
+Binarized neural networks (BNNs) are feedforward neural networks with binary weights and activation functions. In the context of using a BNN for classification, the verification problem seeks to determine whether a small perturbation of a given input can lead it to be misclassified by the BNN, and the robustness of the BNN can be measured by solving the verification problem over multiple inputs. The BNN verification problem can be formulated as an integer programming (IP) problem. However, the natural IP formulation is often challenging to solve due to a large integrality gap induced by big-M constraints. We present two techniques to improve the IP formulation. First, we introduce a new method for obtaining a linear objective for the multi-class setting. Second, we introduce a new technique for generating valid inequalities for the IP formulation that exploits the recursive structure of BNNs. We find that our techniques enable verifying BNNs against a higher range of input perturbation than existing IP approaches within a limited time.
+
+## Paper
+
+This website presents research on integer programming approaches for verifying binarized neural networks. The paper introduces novel techniques to improve IP formulations by:
+
+1. **Linear Objective Method** - A new approach for multi-class classification settings
+2. **Valid Inequalities** - Techniques that exploit the recursive structure of neural networks
+
+The research demonstrates improved verification capabilities compared to existing IP-based approaches.
