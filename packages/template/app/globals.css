@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -37,6 +38,19 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
+
+  /* Layout system from Astro template */
+  --maximum-text-width: 50rem;
+  --minimum-inline-margin: 1.5rem;
+  --actual-inline-margin: max(
+    var(--minimum-inline-margin),
+    (100cqw - var(--maximum-text-width)) /
+    2
+  );
+  --actual-text-width: calc(100cqw - 2 * var(--actual-inline-margin));
+
+  /* Carousel */
+  --slide-gap: 1rem;
 }
 
 .dark {
@@ -124,5 +138,63 @@
   }
   html {
     @apply font-sans;
+  }
+}
+
+/* Layout system from Astro template */
+html {
+  container-type: inline-size;
+}
+
+main {
+  margin-inline: var(--actual-inline-margin);
+}
+
+.full-bleed,
+main .katex-display {
+  margin-inline: calc(var(--actual-inline-margin) * -1);
+}
+
+.katex-display {
+  overflow: auto hidden;
+}
+
+.katex-display > .katex > .katex-html {
+  padding-inline: 1.5rem;
+  width: max-content;
+  margin-inline: auto;
+}
+
+/* Bibliography */
+.csl-entry {
+  margin-block: 1.5rem;
+  text-indent: -2rem;
+  margin-left: 2rem;
+}
+
+/* Expressive Code */
+.expressive-code {
+  width: 100%;
+}
+
+/* Carousel specific */
+.carousel-page-button.active > div {
+  @apply scale-[1.4] bg-orange-600 dark:bg-orange-300;
+}
+
+.carousel-page-button:active > div {
+  @apply scale-100;
+}
+
+@media (hover: hover) {
+  .carousel-page-button:hover > div,
+  .carousel-navigation-button:hover:not(:disabled) > svg {
+    @apply scale-[1.4];
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .carousel-navigation-button {
+    display: none;
   }
 }
