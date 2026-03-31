@@ -4,7 +4,7 @@ const template = Template()
   .fromTemplate("opencode")
   .copy("packages/template", "/home/user/template")
   .setStartCmd(
-    "curl -fsSL https://bun.sh/install | bash && export BUN_INSTALL=\"$HOME/.bun\" && export PATH=\"$BUN_INSTALL/bin:$PATH\" && cd /home/user/template && bun install",
+    "cd /home/user/template && npm install",
     waitForTimeout(60_000)
   );
 
