@@ -1,5 +1,11 @@
 {
-    "name": "arxiv-modesty",
-    "private": true,
-    "workspaces": ["packages/*"]
+  "name": "interactive-papers",
+  "author": "Roman Hauksson-Neill",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "packageManager": "pnpm@10.32.1"
 }
