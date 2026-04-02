@@ -1,6 +1,7 @@
 "use client";
 
-import { RiArrowDropLeftLine, RiArrowDropRightLine } from "@remixicon/react";
+import ArrowDropLeftLineIcon from "@iconify-react/ri/arrow-drop-left-line";
+import ArrowDropRightLineIcon from "@iconify-react/ri/arrow-drop-right-line";
 import { Children, type ReactNode, useEffect, useRef, useState } from "react";
 
 interface CarouselProps {
@@ -70,7 +71,7 @@ export function Carousel({ children }: CarouselProps) {
           disabled={currentIndex === 0}
           onClick={() => goToSlide(currentIndex - 1)}
         >
-          <RiArrowDropLeftLine className="mx-auto h-[2rem] w-[2rem] dark:text-zinc-200" />
+          <ArrowDropLeftLineIcon className="mx-auto h-[2rem] w-[2rem] dark:text-zinc-200" />
         </button>
         <div className="flex">
           {slides.map((_, index) => (
@@ -92,7 +93,7 @@ export function Carousel({ children }: CarouselProps) {
           disabled={currentIndex === numSlides - 1}
           onClick={() => goToSlide(currentIndex + 1)}
         >
-          <RiArrowDropRightLine className="mx-auto h-[2rem] w-[2rem] transition dark:text-zinc-200" />
+          <ArrowDropRightLineIcon className="mx-auto h-[2rem] w-[2rem] transition dark:text-zinc-200" />
         </button>
       </div>
       <div className="carousel-viewport mx-[calc(var(--slide-gap)/-2)] w-[calc(var(--actual-text-width)+var(--slide-gap))]">

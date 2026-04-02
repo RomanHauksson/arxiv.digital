@@ -29,13 +29,7 @@ export default function RootLayout({
     >
       <body className="prose prose-lg prose-zinc dark:prose-invert prose-a:text-blue-500 prose-a:dark:text-blue-300 prose-a:no-underline prose-a:hover:underline prose-a:font-normal prose-code:bg-zinc-200 prose-code:dark:bg-zinc-800 prose-code:text-zinc-800 prose-code:dark:text-zinc-200 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:font-medium prose-code:before:content-none prose-code:after:content-none max-w-none pt-16 pb-6">
         <ThemeProvider>
-          <header className="mx-auto mb-12 max-w-[50rem] px-6 text-center">
-            <h1 className="text-5xl font-medium">Project Title</h1>
-            <p className="text-lg text-muted-foreground mt-4">
-              Add your content in page.mdx
-            </p>
-          </header>
-          <main>{children}</main>
+          {children}
           <footer className="mx-auto max-w-[50rem] px-6 text-center mt-12">
             <p className="text-sm text-center text-muted-foreground">
               Built with{" "}

@@ -172,11 +172,6 @@ main .katex-display {
   margin-left: 2rem;
 }
 
-/* Expressive Code */
-.expressive-code {
-  width: 100%;
-}
-
 /* Carousel specific */
 .carousel-page-button.active > div {
   @apply scale-[1.4] bg-orange-600 dark:bg-orange-300;
