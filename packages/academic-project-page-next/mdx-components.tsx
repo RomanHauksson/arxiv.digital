@@ -1,6 +1,15 @@
 import type { MDXComponents } from "mdx/types";
 
-import { Header, Title, Authors, Author, Conference, Notes, Links, Link } from "@/components/header"
+import {
+	Header,
+	Title,
+	Authors,
+	Author,
+	Conference,
+	Notes,
+	Links,
+	Link,
+} from "@/components/header";
 import { Carousel } from "@/components/carousel";
 import { Comparison } from "@/components/comparison";
 import { Figure } from "@/components/figure";
@@ -14,21 +23,36 @@ import { Video } from "@/components/video";
 import { Wide } from "@/components/wide";
 import { YouTubeVideo } from "@/components/youtube-video";
 
-export const mdxComponents: MDXComponents = {
-  Header, Title, Authors, Author, Conference, Notes, Links, Link,
-  SmallCaps,
-  Picture,
-  Video,
-  YouTubeVideo,
-  Figure,
-  HighlightedSection,
-  Wide,
-  TwoColumns,
-  Carousel,
-  Comparison,
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-  table: TableWrapper,
-};
+export const components = {
+	Header,
+	Title,
+	Authors,
+	Author,
+	Conference,
+	Notes,
+	Links,
+	Link,
+	SmallCaps,
+	Picture,
+	Video,
+	YouTubeVideo,
+	Figure,
+	HighlightedSection,
+	Wide,
+	TwoColumns,
+	Carousel,
+	Comparison,
+	Tabs,
+	TabsContent,
+	TabsList,
+	TabsTrigger,
+	table: TableWrapper,
+} satisfies MDXComponents;
+
+declare global {
+	type MDXProvidedComponents = typeof components;
+}
+
+export function useMDXComponents(): MDXComponents {
+	return components;
+}
