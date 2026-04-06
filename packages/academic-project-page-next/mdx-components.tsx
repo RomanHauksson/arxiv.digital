@@ -1,20 +1,19 @@
 import type { MDXComponents } from "mdx/types";
-
-import {
-	Header,
-	Title,
-	Authors,
-	Author,
-	Conference,
-	Notes,
-	Links,
-	Link,
-} from "@/components/header";
 import { Carousel } from "@/components/carousel";
 import { Comparison } from "@/components/comparison";
 import { Figure } from "@/components/figure";
+import {
+	Author,
+	Authors,
+	Conference,
+	Header,
+	Link,
+	Links,
+	Notes,
+	Title,
+} from "@/components/header";
 import { HighlightedSection } from "@/components/highlighted-section";
-import { Picture } from "@/components/picture";
+import { Image } from "@/components/image";
 import { SmallCaps } from "@/components/small-caps";
 import { TableWrapper } from "@/components/table-wrapper";
 import { TwoColumns } from "@/components/two-columns";
@@ -33,7 +32,7 @@ export const components = {
 	Links,
 	Link,
 	SmallCaps,
-	Picture,
+	Image,
 	Video,
 	YouTubeVideo,
 	Figure,

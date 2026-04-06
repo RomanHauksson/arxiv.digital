@@ -17,12 +17,9 @@
   </Links>
 </Header>
 
-import outside from "@/assets/outside.mp4";
-import dogsDiffc from "@/assets/dogs-diffc.png"
-import dogsTrue from "@/assets/dogs-true.png"
-import dogsMsillm from "@/assets/dogs-msillm.jpg"
+// import outside from "@/assets/outside.mp4";
 
-<Video src={outside} />
+{/* <Video src={outside} /> */}
 
 <HighlightedSection>
 
@@ -34,36 +31,37 @@ This is a template you can use to create a professional project page for your re
 
 ## Visuals
 
-### Picture
+### Images
 
-Use the `Picture` component to display images. If you have a figure in PDF format, you can pass in its path as the `src` prop and it will be converted into a web-friendly image automatically.
+import dogsDiffc from "@/assets/dogs-diffc.png"
+import dogsTrue from "@/assets/dogs-true.png"
+import dogsMsillm from "@/assets/dogs-msillm.jpg"
 
-<Picture src={dogsDiffc} alt="Photo of two running dogs, lossily compressed using the DiffC algorithm" />
+<Image src={dogsDiffc} alt="Photo of two running dogs, lossily compressed using the DiffC algorithm" />
 
 ### Wide visual
 
 I constrained the maximum width of the text column to make sure it's readable even when the screen is wide. But images and other visuals should "break out" and take up more horizontal space: for this, try wrapping them in the `Wide` component.
 
 <Wide>
-  <Picture src={dogsDiffc} alt="Photo of two running dogs, lossily compressed using the DiffC algorithm" />
+  <Image src={dogsDiffc} alt="Photo of two running dogs, lossily compressed using the DiffC algorithm" />
 </Wide>
 
 ### Figure with caption
 
 Wrap a visual in a `Figure` component to add a caption.
 
-<Figure>
-  <Picture slot="figure" src={dogsDiffc} alt="Photo of two running dogs, lossily compressed using the DiffC algorithm" />
-  <Fragment slot="caption">A photo of two dogs running side-by-side in shallow water, lossily compressed using the [DiffC algorithm](https://jeremyiv.github.io/diffc-project-page/).</Fragment>
-</Figure>
+<Figure figure={<Image slot="figure" src={dogsDiffc} alt="Photo of two running dogs, lossily compressed using the DiffC algorithm" />}
+caption={<>
+A photo of two dogs running side-by-side in shallow water, lossily compressed using the [DiffC algorithm](https://jeremyiv.github.io/diffc-project-page/).</>} />
 
 ### Comparison slider
 
 Use the `Comparison` component to compare two visuals with an interactive slider.
 
 <Comparison client:idle >
-  <Picture slot="itemOne" src={dogsDiffc} alt="Photo of two running dogs, lossily compressed using the DiffC algorithm" />
-  <Picture slot="itemTwo" src={dogsTrue} alt="True photo of two dogs running side-by-side in shallow water" />
+  <Image slot="itemOne" src={dogsDiffc} alt="Photo of two running dogs, lossily compressed using the DiffC algorithm" />
+  <Image slot="itemTwo" src={dogsTrue} alt="True photo of two dogs running side-by-side in shallow water" />
 </Comparison>
 
 ### Tab panels
@@ -77,19 +75,19 @@ Tab panels are a great way to display a labeled collection of related visuals wi
     <TabsTrigger value="msillm">MS-ILLM</TabsTrigger>
   </TabsList>
   <TabsContent value="true">
-    <Picture
+    <Image
       src={dogsTrue}
       alt="True photo of two dogs running side-by-side in shallow water"
     />
   </TabsContent>
   <TabsContent value="diffc">
-    <Picture
+    <Image
       src={dogsDiffc}
       alt="Photo of two running dogs, lossily compressed using the DiffC algorithm"
     />
   </TabsContent>
   <TabsContent value="msillm">
-    <Picture
+    <Image
       src={dogsMsillm}
       alt="Photo of two running dogs, lossily compressed using MS-ILLM"
     />
@@ -101,28 +99,21 @@ Tab panels are a great way to display a labeled collection of related visuals wi
 A carousel is another useful pattern for a collection of visuals that don't necessarily have meaningful labels.
 
 <Carousel>
-  <CarouselSlide>
-    <Picture src={dogsTrue} alt="True photo of two dogs running side-by-side in shallow water" />
-  </CarouselSlide>
-  <CarouselSlide>
-    <Picture src={dogsDiffc} alt="Photo of two running dogs, lossily compressed using the DiffC algorithm" />
-  </CarouselSlide>
-  <CarouselSlide>
-    <Picture
+    <Image src={dogsTrue} alt="True photo of two dogs running side-by-side in shallow water" />
+    <Image src={dogsDiffc} alt="Photo of two running dogs, lossily compressed using the DiffC algorithm" />
+    <Image
       src={dogsMsillm}
       alt="Photo of two running dogs, lossily compressed using MS-ILLM"
     />
-  </CarouselSlide>
 </Carousel>
 
 ## Two columns
 
-Use the two columns component to display two columns of content. In this example, the first column contains a YouTube video embed and the second column contains an interactive 3D model viewer. By default, they display side by side, but if the screen is narrow enough (for example, on mobile), they're arranged vertically.
+Use the two columns component to display two columns of content.
 
-<TwoColumns>
-  <YouTubeVideo slot="left" videoId="wjZofJX0v4M" />
-  <ModelViewer slot="right" src="/BoxVertexColors.glb" alt="A cube colored with a rainbow gradient" />
-</TwoColumns>
+<TwoColumns left={<p>test</p>}  right={<p>test</p>}/>
+
+<YouTubeVideo videoId="wjZofJX0v4M" />
 
 ## $\LaTeX$
 
