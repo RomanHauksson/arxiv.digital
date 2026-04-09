@@ -16,7 +16,7 @@ import { HighlightedSection } from "@/components/highlighted-section";
 import { Image } from "@/components/image";
 import { SmallCaps } from "@/components/small-caps";
 import { TableWrapper } from "@/components/table-wrapper";
-import { TwoColumns } from "@/components/two-columns";
+import { Column, Columns } from "@/components/columns";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Video } from "@/components/video";
 import { Wide } from "@/components/wide";
@@ -40,7 +40,8 @@ export const components = {
 	FigureCaption,
 	HighlightedSection,
 	Wide,
-	TwoColumns,
+	Columns,
+	Column,
 	Carousel,
 	Comparison,
 	Tabs,

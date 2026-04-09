@@ -115,11 +115,18 @@ For longer videos, use a YouTube embed for better performance.
 
 <YouTubeVideo videoId="wjZofJX0v4M" />
 
-## Two columns
+## Columns
 
-Use the two columns component to display two columns of content.
+Lay out multiple columns of content. Will wrap on narrow screens.
 
-<TwoColumns left={<p>test</p>} right={<p>test</p>}/>
+<Columns>
+  <Column>
+    <Image src={dogsTrue} alt="True photo of two dogs running side-by-side in shallow water" />
+  </Column>
+  <Column>
+    <Image src={dogsDiffc} alt="Photo of two running dogs, lossily compressed using the DiffC algorithm" />
+  </Column>
+</Columns>
 
 ## $\LaTeX$
 
