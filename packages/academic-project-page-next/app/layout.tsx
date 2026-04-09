@@ -40,7 +40,6 @@ export default function RootLayout({
 								>
 									Roman Hauksson-Neill&apos;s project page template
 								</a>
-								Press &quot;d&quot; to toggle dark mode.
 							</p>
 						</footer>
 					</main>
