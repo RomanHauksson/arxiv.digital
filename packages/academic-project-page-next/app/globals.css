@@ -155,3 +155,12 @@ main {
 main .katex-display {
 	margin-inline: calc(var(--actual-inline-margin) * -1);
 }
+
+/*
+ * Tailwind preflight sets `svg { display: block }`, which applies to MathJax SVG
+ * output and forces each inline equation onto its own line. Inline math must stay
+ * inline; MathJax sets vertical-align on the SVG via its own inline styles.
+ */
+mjx-container[jax="SVG"] > svg {
+	display: inline;
+}
