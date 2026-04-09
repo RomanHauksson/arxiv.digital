@@ -8,10 +8,7 @@ export function Image({
 }: ComponentProps<typeof NextImage>) {
 	return (
 		<NextImage
-			className={cn(
-				"rounded-lg max-h-[calc(100svh-3rem)] max-w-full w-auto mx-auto h-auto",
-				className,
-			)}
+			className={cn("rounded-lg max-w-full mx-auto", className)}
 			{...props}
 		/>
 	);
