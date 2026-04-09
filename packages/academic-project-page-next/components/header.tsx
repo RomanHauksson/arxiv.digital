@@ -1,6 +1,6 @@
 export function Header({ children }: { children: React.ReactNode }) {
 	return (
-		<header className="mx-auto mb-12 max-w-[50rem] px-6 text-center">
+		<header className="flex flex-col gap-6 mx-auto mb-12 max-w-[50rem] px-6 text-center">
 			{children}
 		</header>
 	);

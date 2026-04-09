@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { Icon } from "@iconify-icon/react";
 import { Children, type ReactNode, useEffect, useRef, useState } from "react";
 
@@ -65,39 +66,45 @@ export function Carousel({ children }: CarouselProps) {
 		<div className="carousel-wrapper">
 			<div className="not-prose my-4 flex items-center justify-center">
 				<button
-					className="carousel-navigation-button prev-button h-[3rem] w-[3rem] cursor-pointer content-center disabled:cursor-not-allowed disabled:opacity-50"
+					className="group h-[3rem] w-[3rem] cursor-pointer content-center disabled:cursor-not-allowed disabled:opacity-50"
 					type="button"
 					disabled={currentIndex === 0}
 					onClick={() => goToSlide(currentIndex - 1)}
 				>
 					<Icon
 						icon="ri:arrow-drop-left-line"
-						className="mx-auto h-[2rem] w-[2rem] dark:text-zinc-200"
+						className="mx-auto h-[2rem] w-[2rem] dark:text-zinc-200 group-hover:group-not-disabled:scale-140"
 					/>
 				</button>
 				<div className="flex">
 					{slides.map((_, index) => (
 						<button
 							key={index}
-							className={`carousel-page-button h-[3rem] w-[3rem] cursor-pointer content-center ${
+							className={`group h-[3rem] w-[3rem] cursor-pointer content-center ${
 								index === currentIndex ? "active" : ""
 							}`}
 							type="button"
 							onClick={() => goToSlide(index)}
 						>
-							<div className="mx-auto h-[0.5rem] w-[0.5rem] rounded-full bg-black transition dark:bg-zinc-200" />
+							<div
+								className={cn(
+									"mx-auto group-hover:group-not-disabled:scale-140 h-[0.5rem] w-[0.5rem] rounded-full bg-black transition dark:bg-zinc-200",
+									index === currentIndex &&
+										"scale-[1.4] bg-orange-600 dark:bg-orange-300",
+								)}
+							/>
 						</button>
 					))}
 				</div>
 				<button
-					className="carousel-navigation-button next-button h-[3rem] w-[3rem] cursor-pointer content-center disabled:cursor-not-allowed disabled:opacity-50"
+					className="next-button h-[3rem] w-[3rem] cursor-pointer content-center disabled:cursor-not-allowed disabled:opacity-50 group"
 					type="button"
 					disabled={currentIndex === numSlides - 1}
 					onClick={() => goToSlide(currentIndex + 1)}
 				>
 					<Icon
 						icon="ri:arrow-drop-right-line"
-						className="mx-auto h-[2rem] w-[2rem] transition dark:text-zinc-200"
+						className="mx-auto h-[2rem] w-[2rem] group-hover:group-not-disabled:scale-140 transition dark:text-zinc-200"
 					/>
 				</button>
 			</div>
