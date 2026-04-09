@@ -1,8 +1,10 @@
 <Header>
   <Title>Academic Project Page Template</Title>
   <Authors>
-    <Author notes={['*', 't']} institution="University of Texas at Dallas" url="https://roman.technology">Roman Hauksson-Neill</Author>
-    <Author notes={['*', 't']}>Roman Hauksson-Neill</Author>
+    <Author notes={['*', '†']} institution="University of Texas at Dallas" url="https://roman.technology">Roman Hauksson-Neill</Author>
+    <Author notes={['*', '†']} institution="Institution Two">Author Two</Author>
+    <Author notes={['*']} institution="Institution Three">Author Three</Author>
+    <Author institution="Institution Four">Author Four</Author>
   </Authors>
   <Conference>Conference Name</Conference>
   <Notes notes={[
@@ -20,13 +22,9 @@
 
 <Video src="/outside.mp4" />
 
-<HighlightedSection>
-
 ## Abstract
 
 This is a template you can use to create a professional project page for your research paper. [See the code for the template and instructions on how to use it yourself on GitHub](https://github.com/RomanHauksson/academic-project-astro-template). It's made with the [Astro web framework](https://astro.build/) and styled with [Tailwind](https://tailwindcss.com/). You write the content in [MDX](https://mdxjs.com/), which enables markdown formatting like **bold**, _italics_, and ~strikethrough~, as well as custom components like <SmallCaps>small caps.</SmallCaps>
-
-</HighlightedSection>
 
 ## Visuals
 
@@ -58,16 +56,13 @@ A photo of two dogs running side-by-side in shallow water, lossily compressed us
 
 Use the `Comparison` component to compare two visuals with an interactive slider.
 
-<Comparison client:idle >
-  <Image slot="itemOne" src={dogsDiffc} alt="Photo of two running dogs, lossily compressed using the DiffC algorithm" />
-  <Image slot="itemTwo" src={dogsTrue} alt="True photo of two dogs running side-by-side in shallow water" />
-</Comparison>
+<Comparison itemOne={<Image slot="itemOne" src={dogsDiffc} alt="Photo of two running dogs, lossily compressed using the DiffC algorithm" />} itemTwo={<Image slot="itemTwo" src={dogsTrue} alt="True photo of two dogs running side-by-side in shallow water" />}/>
 
 ### Tab panels
 
 Tab panels are a great way to display a labeled collection of related visuals without taking up too much space.
 
-<Tabs defaultValue="true">
+<Tabs>
   <TabsList>
     <TabsTrigger value="true">Ground truth</TabsTrigger>
     <TabsTrigger value="diffc">DiffC (Flux-dev)</TabsTrigger>
@@ -122,9 +117,9 @@ $$
 \int_a^b f(x) dx
 $$
 
-## Citation
+## Footnotes
 
-If you copy your bibliography into `./bibliography.bib`, you can cite papers using their BibTeX keys, and they'll be automatically formatted and included in the bibliography section at the end. For example: [@vaswani2017attention]. Note that these citations are distinct from footnotes[^mynote], which show up in a separate section if you use them.
+If you add any footnotes with this syntax[^mynote], they'll appear in a section at the bottom of the page.
 
 [^mynote]: On the web, they should really be called "endnotes", since each page constitutes a full document.
 
@@ -145,13 +140,9 @@ Displaying the BibTeX entry for your paper in a code block makes it easy to copy
 
 ```bibtex
 @misc{roman2024academic,
-  author = "{Roman Hauksson}",
+  author = "{Roman Hauksson-Neill}",
   title = "Academic Project Page Template",
   year = "2024",
   howpublished = "\url{https://research-template.roman.technology}",
 }
 ```
-
-## Bibliography
-
-[^ref]
