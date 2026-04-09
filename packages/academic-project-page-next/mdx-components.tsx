@@ -1,7 +1,7 @@
 import type { MDXComponents } from "mdx/types";
 import { Carousel } from "@/components/carousel";
 import { Comparison } from "@/components/comparison";
-import { Figure } from "@/components/figure";
+import { Figure, FigureCaption, FigureContent } from "@/components/figure";
 import {
 	Author,
 	Authors,
@@ -36,6 +36,8 @@ export const components = {
 	Video,
 	YouTubeVideo,
 	Figure,
+	FigureContent,
+	FigureCaption,
 	HighlightedSection,
 	Wide,
 	TwoColumns,

@@ -46,11 +46,16 @@ I constrained the maximum width of the text column to make sure it's readable ev
 
 ### Figure with caption
 
-Wrap a visual in a `Figure` component to add a caption.
+Wrap a visual in `Figure`, `FigureContent`, and `FigureCaption`.
 
-<Figure figure={<Image slot="figure" src={dogsDiffc} alt="Photo of two running dogs, lossily compressed using the DiffC algorithm" />}
-caption={<>
-A photo of two dogs running side-by-side in shallow water, lossily compressed using the [DiffC algorithm](https://jeremyiv.github.io/diffc-project-page/).</>} />
+<Figure>
+  <FigureContent>
+    <Image src={dogsDiffc} alt="Photo of two running dogs, lossily compressed using the DiffC algorithm" />
+  </FigureContent>
+  <FigureCaption>
+A photo of two dogs running side-by-side in shallow water, lossily compressed using the [DiffC algorithm](https://jeremyiv.github.io/diffc-project-page/).
+  </FigureCaption>
+</Figure>
 
 ### Comparison slider
 

@@ -1,15 +1,13 @@
-import type { ReactNode } from "react";
+import type { PropsWithChildren } from "react";
 
-interface FigureProps {
-	figure: ReactNode;
-	caption?: ReactNode;
+export function Figure({ children }: PropsWithChildren) {
+	return <figure>{children}</figure>;
 }
 
-export function Figure({ figure, caption }: FigureProps) {
-	return (
-		<figure>
-			<div className="flex w-full justify-center *:my-0">{figure}</div>
-			{caption && <figcaption className="text-center">{caption}</figcaption>}
-		</figure>
-	);
+export function FigureContent({ children }: PropsWithChildren) {
+	return <div className="flex w-full justify-center *:my-0">{children}</div>;
+}
+
+export function FigureCaption({ children }: PropsWithChildren) {
+	return <figcaption className="text-center">{children}</figcaption>;
 }
