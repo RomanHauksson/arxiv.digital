@@ -19,9 +19,6 @@
   </Links>
 </Header>
 
-
-<Video src="/outside.mp4" />
-
 ## Abstract
 
 This is a template you can use to create a professional project page for your research paper. [See the code for the template and instructions on how to use it yourself on GitHub](https://github.com/RomanHauksson/academic-project-astro-template). It's made with the [Astro web framework](https://astro.build/) and styled with [Tailwind](https://tailwindcss.com/). You write the content in [MDX](https://mdxjs.com/), which enables markdown formatting like **bold**, _italics_, and ~strikethrough~, as well as custom components like <SmallCaps>small caps.</SmallCaps>
@@ -106,13 +103,23 @@ A carousel is another useful pattern for a collection of visuals that don't nece
     />
 </Carousel>
 
+## Videos
+
+### Native video
+
+<Video src="/outside.mp4" />
+
+### YouTube embed
+
+For longer videos, use a YouTube embed for better performance.
+
+<YouTubeVideo videoId="wjZofJX0v4M" />
+
 ## Two columns
 
 Use the two columns component to display two columns of content.
 
-<TwoColumns left={<p>test</p>}  right={<p>test</p>}/>
-
-<YouTubeVideo videoId="wjZofJX0v4M" />
+<TwoColumns left={<p>test</p>} right={<p>test</p>}/>
 
 ## $\LaTeX$
 
