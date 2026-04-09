@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Icon } from "@iconify-icon/react";
 import { Children, type ReactNode, useEffect, useRef, useState } from "react";
 
 interface CarouselProps {
@@ -66,15 +65,12 @@ export function Carousel({ children }: CarouselProps) {
 		<div className="carousel-wrapper">
 			<div className="not-prose my-4 flex items-center justify-center">
 				<button
-					className="group h-[3rem] w-[3rem] cursor-pointer content-center disabled:cursor-not-allowed disabled:opacity-50"
+					className="group h-[3rem] w-[3rem] cursor-pointer flex items-center justify-center disabled:cursor-not-allowed disabled:opacity-50"
 					type="button"
 					disabled={currentIndex === 0}
 					onClick={() => goToSlide(currentIndex - 1)}
 				>
-					<Icon
-						icon="ri:arrow-drop-left-line"
-						className="mx-auto h-[2rem] w-[2rem] dark:text-zinc-200 group-hover:group-not-disabled:scale-140"
-					/>
+					<span className="icon-[ri--arrow-drop-left-line] h-8 w-8 group-hover:group-not-disabled:scale-140 transition dark:text-zinc-200" />
 				</button>
 				<div className="flex">
 					{slides.map((_, index) => (
@@ -97,15 +93,12 @@ export function Carousel({ children }: CarouselProps) {
 					))}
 				</div>
 				<button
-					className="next-button h-[3rem] w-[3rem] cursor-pointer content-center disabled:cursor-not-allowed disabled:opacity-50 group"
+					className="next-button h-[3rem] w-[3rem] cursor-pointer flex items-center justify-center disabled:cursor-not-allowed disabled:opacity-50 group"
 					type="button"
 					disabled={currentIndex === numSlides - 1}
 					onClick={() => goToSlide(currentIndex + 1)}
 				>
-					<Icon
-						icon="ri:arrow-drop-right-line"
-						className="mx-auto h-[2rem] w-[2rem] group-hover:group-not-disabled:scale-140 transition dark:text-zinc-200"
-					/>
+					<span className="icon-[ri--arrow-drop-right-line] h-8 w-8 group-hover:group-not-disabled:scale-140 transition dark:text-zinc-200" />
 				</button>
 			</div>
 			<div className="carousel-viewport mx-[calc(var(--slide-gap)/-2)] w-[calc(var(--actual-text-width)+var(--slide-gap))]">

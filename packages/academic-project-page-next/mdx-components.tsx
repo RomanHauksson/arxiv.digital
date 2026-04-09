@@ -21,7 +21,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Video } from "@/components/video";
 import { Wide } from "@/components/wide";
 import { YouTubeVideo } from "@/components/youtube-video";
-import { Icon } from "@iconify-icon/react";
 
 export const components = {
 	Header,
@@ -47,7 +46,6 @@ export const components = {
 	TabsList,
 	TabsTrigger,
 	table: TableWrapper,
-	Icon,
 } satisfies MDXComponents;
 
 declare global {
